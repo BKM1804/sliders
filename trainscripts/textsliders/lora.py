@@ -120,6 +120,7 @@ class LoRANetwork(nn.Module):
         multiplier: float = 1.0,
         alpha: float = 1.0,
         train_method: TRAINING_METHODS = "full",
+        target_replace_modules: List[str] = DEFAULT_TARGET_REPLACE,
     ) -> None:
         super().__init__()
         self.lora_scale = 1
@@ -134,7 +135,7 @@ class LoRANetwork(nn.Module):
         self.unet_loras = self.create_modules(
             LORA_PREFIX_UNET,
             unet,
-            DEFAULT_TARGET_REPLACE,
+            target_replace_modules,
             self.lora_dim,
             self.multiplier,
             train_method=train_method,

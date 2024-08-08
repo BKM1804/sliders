@@ -22,7 +22,7 @@ import config_util
 from config_util import RootConfig
 
 import wandb
-
+import random
 
 def flush():
     torch.cuda.empty_cache()
@@ -49,7 +49,7 @@ def train(
         print(metadata)
 
     if config.logging.use_wandb:
-        wandb.init(project=f"LECO_{config.save.name}", config=metadata)
+        wandb.init(project=f"sliders_{config.save.name}", config=metadata)
 
     weight_dtype = config_util.parse_precision(config.train.precision)
     save_weight_dtype = config_util.parse_precision(config.train.precision)
@@ -75,6 +75,7 @@ def train(
         multiplier=1.0,
         alpha=config.network.alpha,
         train_method=config.network.training_method,
+        target_replace_modules=modules,
     ).to(device, dtype=weight_dtype)
 
     optimizer_module = train_util.get_optimizer(config.train.optimizer)
@@ -164,9 +165,9 @@ def train(
                 torch.randint(0, len(prompt_pairs), (1,)).item()
             ]
 
-            # 1 ~ 49 からランダム
+            # 10 ~ 49 からランダム
             timesteps_to = torch.randint(
-                1, config.train.max_denoising_steps, (1,)
+                10, config.train.max_denoising_steps, (1,)
             ).item()
 
             height, width = (
@@ -185,7 +186,8 @@ def train(
                 if prompt_pair.dynamic_resolution:
                     print("bucketed resolution:", (height, width))
                 print("batch_size:", prompt_pair.batch_size)
-
+                
+            
             latents = train_util.get_initial_latents(
                 noise_scheduler, prompt_pair.batch_size, height, width, 1
             ).to(device, dtype=weight_dtype)
@@ -203,7 +205,7 @@ def train(
                     ),
                     start_timesteps=0,
                     total_timesteps=timesteps_to,
-                    guidance_scale=3,
+                    guidance_scale=prompt_pair.guidance_scale
                 )
 
             noise_scheduler.set_timesteps(1000)
@@ -223,7 +225,7 @@ def train(
                     prompt_pair.positive,
                     prompt_pair.batch_size,
                 ),
-                guidance_scale=1,
+                guidance_scale=prompt_pair.guidance_scale
             ).to(device, dtype=weight_dtype)
              
             neutral_latents = train_util.predict_noise(
@@ -236,7 +238,7 @@ def train(
                     prompt_pair.neutral,
                     prompt_pair.batch_size,
                 ),
-                guidance_scale=1,
+                guidance_scale=prompt_pair.guidance_scale
             ).to(device, dtype=weight_dtype)
             unconditional_latents = train_util.predict_noise(
                 unet,
@@ -248,7 +250,7 @@ def train(
                     prompt_pair.unconditional,
                     prompt_pair.batch_size,
                 ),
-                guidance_scale=1,
+                guidance_scale=prompt_pair.guidance_scale
             ).to(device, dtype=weight_dtype)
             
             
@@ -269,7 +271,7 @@ def train(
                     prompt_pair.target,
                     prompt_pair.batch_size,
                 ),
-                guidance_scale=1,
+                guidance_scale=prompt_pair.guidance_scale
             ).to(device, dtype=weight_dtype)
             
             #########################
@@ -316,14 +318,14 @@ def train(
             print("Saving...")
             save_path.mkdir(parents=True, exist_ok=True)
             network.save_weights(
-                save_path / f"{config.save.name}_{i}steps.pt",
+                save_path / f"{config.save.name}_{i}steps.safetensors",
                 dtype=save_weight_dtype,
             )
 
     print("Saving...")
     save_path.mkdir(parents=True, exist_ok=True)
     network.save_weights(
-        save_path / f"{config.save.name}_last.pt",
+        save_path / f"{config.save.name}_last.safetensors",
         dtype=save_weight_dtype,
     )
 
@@ -363,7 +365,6 @@ def main(args):
     config.save.path += f'/{config.save.name}'
     
     prompts = prompt_util.load_prompts_from_yaml(config.prompts_file, attributes)
-    print(prompts)
     device = torch.device(f"cuda:{args.device}")
     train(config, prompts, device)
     
