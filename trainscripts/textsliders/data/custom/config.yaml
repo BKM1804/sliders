@@ -1,6 +1,6 @@
 prompts_file: "trainscripts/imagesliders/data/prompts.yaml"
 pretrained_model:
-  name_or_path: "stablediffusionapi/realistic-vision-v51" # you can also use .ckpt or .safetensors models
+  name_or_path: "base_models/veronika" # you can also use .ckpt or .safetensors models
   v2: false # true if model is v2.x
   v_pred: false # true if model uses v-prediction
 network:
@@ -22,7 +22,7 @@ save:
   per_steps: 500
   precision: "bfloat16"
 logging:
-  use_wandb: false
+  use_wandb: true
   verbose: false
 other:
   use_xformers: true

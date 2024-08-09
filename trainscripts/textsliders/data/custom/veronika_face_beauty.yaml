@@ -1,0 +1,20 @@
+- target: ohwx woman
+  positive: ohwx woman, beautiful face, attractive, stunning, flawless skin, symmetrical features, well-groomed, radiant, glowing, elegant, charming, aesthetically pleasing, clear complexion, bright eyes, perfect smile
+  unconditional: ohwx woman, unattractive face, blemished skin, asymmetrical features, unkempt, dull, unremarkable, lackluster, unappealing, acne, scars, tired eyes, dull complexion
+  neutral: ohwx woman
+  guidance_scale: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 8
+- target: ohwx woman
+  positive: ohwx woman, unattractive face, blemished skin, asymmetrical features, unkempt, dull, unremarkable, lackluster, unappealing, acne, scars, tired eyes, dull complexion
+  unconditional: ohwx woman, beautiful face, attractive, stunning, flawless skin, symmetrical features, well-groomed, radiant, glowing, elegant, charming, aesthetically pleasing, clear complexion, bright eyes, perfect smile
+  neutral: ohwx woman
+  guidance_scale: 4
+  rank: 4
+  action: erase
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 8

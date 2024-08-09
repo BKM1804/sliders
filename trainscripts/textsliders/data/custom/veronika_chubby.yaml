@@ -1,0 +1,20 @@
+- target: ohwx woman
+  positive: ohwx woman, chubby, round face, fuller cheeks, double chin, plump, well-fed, soft body, larger frame, thick arms, thick legs, pronounced belly, full figure
+  unconditional: ohwx woman, thin, slender, angular face, sharp features, lean, fit, slim, bony, petite, narrow frame, flat belly
+  neutral: ohwx woman
+  guidance_scale: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 8
+# - target: ohwx woman
+#   positive: ohwx woman, thin, slender, angular face, sharp features, lean, fit, slim, bony, petite, narrow frame, flat belly
+#   unconditional: ohwx woman, chubby, round face, fuller cheeks, double chin, plump, well-fed, soft body, larger frame, thick arms, thick legs, pronounced belly, full figure
+#   neutral: ohwx woman
+#   guidance_scale: 4
+#   rank: 4
+#   action: erase
+#   resolution: 512
+#   dynamic_resolution: false
+#   batch_size: 8
