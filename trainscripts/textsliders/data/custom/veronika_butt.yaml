@@ -1,0 +1,20 @@
+- target: ohwx woman
+  positive: ohwx woman, large buttocks, curvy, voluptuous, pronounced hips
+  unconditional: ohwx woman, flat buttocks, slim hips
+  neutral: ohwx woman
+  guidance_scale: 1
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 8
+# - target: ohwx woman
+#   positive: ohwx woman, flat buttocks, slim hips
+#   unconditional: ohwx woman, large buttocks, curvy, voluptuous, pronounced hips
+#   neutral: ohwx woman
+#   guidance_scale: 1
+#   rank: 4
+#   action: erase
+#   resolution: 512
+#   dynamic_resolution: false
+#   batch_size: 8

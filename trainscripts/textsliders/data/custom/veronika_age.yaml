@@ -1,5 +1,5 @@
 - target: ohwx woman
-  positive: ohwx woman, very old, wrinkly, gray hair, aged skin, elderly
+  positive: ohwx woman, very old, wrinkly, aged skin, elderly
   unconditional: ohwx woman, very young, smooth skin, youthful, teenager
   neutral: ohwx woman
   guidance_scale: 1
@@ -7,14 +7,14 @@
   action: enhance
   resolution: 512
   dynamic_resolution: false
-  batch_size: 8
+  batch_size: 1
 # - target: ohwx woman
 #   positive: ohwx woman, very young, smooth skin, youthful, teenager
-#   unconditional: ohwx woman, very old, wrinkly, gray hair, aged skin, elderly
+#   unconditional: ohwx woman, very old, wrinkly, aged skin, elderly
 #   neutral: ohwx woman
-#   guidance_scale: 4
+#   guidance_scale: 1
 #   rank: 4
 #   action: erase
 #   resolution: 512
 #   dynamic_resolution: false
-#   batch_size: 8
+#   batch_size: 1

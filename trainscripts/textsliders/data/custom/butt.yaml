@@ -1,0 +1,109 @@
+- target: white race woman
+  positive: white race woman, large buttocks, curvy, voluptuous, pronounced hips
+  unconditional: white race woman, flat buttocks, slim hips
+  neutral: white race woman
+  guidance_scale: 1
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+
+- target: black race woman
+  positive: black race woman, large buttocks, curvy, voluptuous, pronounced hips
+  unconditional: black race woman, flat buttocks, slim hips
+  neutral: black race woman
+  guidance_scale: 1
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+
+- target: indian race woman
+  positive: indian race woman, large buttocks, curvy, voluptuous, pronounced hips
+  unconditional: indian race woman, flat buttocks, slim hips
+  neutral: indian race woman
+  guidance_scale: 1
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+
+- target: asian race woman
+  positive: asian race woman, large buttocks, curvy, voluptuous, pronounced hips
+  unconditional: asian race woman, flat buttocks, slim hips
+  neutral: asian race woman
+  guidance_scale: 1
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+
+- target: hispanic race woman
+  positive: hispanic race woman, large buttocks, curvy, voluptuous, pronounced hips
+  unconditional: hispanic race woman, flat buttocks, slim hips
+  neutral: hispanic race woman
+  guidance_scale: 1
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+
+# - target: white race woman
+#   positive: white race woman, flat buttocks, slim hips
+#   unconditional: white race woman, large buttocks, curvy, voluptuous, pronounced hips
+#   neutral: white race woman
+#   guidance_scale: 1
+#   rank: 4
+#   action: erase
+#   resolution: 512
+#   dynamic_resolution: false
+#   batch_size: 1
+
+# - target: black race woman
+#   positive: black race woman, flat buttocks, slim hips
+#   unconditional: black race woman, large buttocks, curvy, voluptuous, pronounced hips
+#   neutral: black race woman
+#   guidance_scale: 1
+#   rank: 4
+#   action: erase
+#   resolution: 512
+#   dynamic_resolution: false
+#   batch_size: 1
+
+# - target: indian race woman
+#   positive: indian race woman, flat buttocks, slim hips
+#   unconditional: indian race woman, large buttocks, curvy, voluptuous, pronounced hips
+#   neutral: indian race woman
+#   guidance_scale: 1
+#   rank: 4
+#   action: erase
+#   resolution: 512
+#   dynamic_resolution: false
+#   batch_size: 1
+
+# - target: asian race woman
+#   positive: asian race woman, flat buttocks, slim hips
+#   unconditional: asian race woman, large buttocks, curvy, voluptuous, pronounced hips
+#   neutral: asian race woman
+#   guidance_scale: 1
+#   rank: 4
+#   action: erase
+#   resolution: 512
+#   dynamic_resolution: false
+#   batch_size: 1
+
+# - target: hispanic race woman
+#   positive: hispanic race woman, flat buttocks, slim hips
+#   unconditional: hispanic race woman, large buttocks, curvy, voluptuous, pronounced hips
+#   neutral: hispanic race woman
+#   guidance_scale: 1
+#   rank: 4
+#   action: erase
+#   resolution: 512
+#   dynamic_resolution: false
+#   batch_size: 1

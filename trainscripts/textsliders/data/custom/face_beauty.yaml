@@ -1,0 +1,220 @@
+- target: white race man
+  positive: person, beautiful face, attractive, stunning, flawless skin, symmetrical features, well-groomed, radiant, glowing, elegant, charming, aesthetically pleasing, clear complexion, bright eyes, perfect smile
+  unconditional: person, unattractive face, blemished skin, asymmetrical features, unkempt, dull, unremarkable, lackluster, unappealing, acne, scars, tired eyes, dull complexion
+  neutral: white race man
+  guidance_scale: 1
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+
+- target: white race woman
+  positive: person, beautiful face, attractive, stunning, flawless skin, symmetrical features, well-groomed, radiant, glowing, elegant, charming, aesthetically pleasing, clear complexion, bright eyes, perfect smile
+  unconditional: person, unattractive face, blemished skin, asymmetrical features, unkempt, dull, unremarkable, lackluster, unappealing, acne, scars, tired eyes, dull complexion
+  neutral: white race woman
+  guidance_scale: 1
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+
+- target: black race man
+  positive: person, beautiful face, attractive, stunning, flawless skin, symmetrical features, well-groomed, radiant, glowing, elegant, charming, aesthetically pleasing, clear complexion, bright eyes, perfect smile
+  unconditional: person, unattractive face, blemished skin, asymmetrical features, unkempt, dull, unremarkable, lackluster, unappealing, acne, scars, tired eyes, dull complexion
+  neutral: black race man
+  guidance_scale: 1
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+
+- target: black race woman
+  positive: person, beautiful face, attractive, stunning, flawless skin, symmetrical features, well-groomed, radiant, glowing, elegant, charming, aesthetically pleasing, clear complexion, bright eyes, perfect smile
+  unconditional: person, unattractive face, blemished skin, asymmetrical features, unkempt, dull, unremarkable, lackluster, unappealing, acne, scars, tired eyes, dull complexion
+  neutral: black race woman
+  guidance_scale: 1
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+
+- target: indian race man
+  positive: person, beautiful face, attractive, stunning, flawless skin, symmetrical features, well-groomed, radiant, glowing, elegant, charming, aesthetically pleasing, clear complexion, bright eyes, perfect smile
+  unconditional: person, unattractive face, blemished skin, asymmetrical features, unkempt, dull, unremarkable, lackluster, unappealing, acne, scars, tired eyes, dull complexion
+  neutral: indian race man
+  guidance_scale: 1
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+
+- target: indian race woman
+  positive: person, beautiful face, attractive, stunning, flawless skin, symmetrical features, well-groomed, radiant, glowing, elegant, charming, aesthetically pleasing, clear complexion, bright eyes, perfect smile
+  unconditional: person, unattractive face, blemished skin, asymmetrical features, unkempt, dull, unremarkable, lackluster, unappealing, acne, scars, tired eyes, dull complexion
+  neutral: indian race woman
+  guidance_scale: 1
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+
+- target: asian race man
+  positive: person, beautiful face, attractive, stunning, flawless skin, symmetrical features, well-groomed, radiant, glowing, elegant, charming, aesthetically pleasing, clear complexion, bright eyes, perfect smile
+  unconditional: person, unattractive face, blemished skin, asymmetrical features, unkempt, dull, unremarkable, lackluster, unappealing, acne, scars, tired eyes, dull complexion
+  neutral: asian race man
+  guidance_scale: 1
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+
+- target: asian race woman
+  positive: person, beautiful face, attractive, stunning, flawless skin, symmetrical features, well-groomed, radiant, glowing, elegant, charming, aesthetically pleasing, clear complexion, bright eyes, perfect smile
+  unconditional: person, unattractive face, blemished skin, asymmetrical features, unkempt, dull, unremarkable, lackluster, unappealing, acne, scars, tired eyes, dull complexion
+  neutral: asian race woman
+  guidance_scale: 1
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+
+- target: hispanic race man
+  positive: person, beautiful face, attractive, stunning, flawless skin, symmetrical features, well-groomed, radiant, glowing, elegant, charming, aesthetically pleasing, clear complexion, bright eyes, perfect smile
+  unconditional: person, unattractive face, blemished skin, asymmetrical features, unkempt, dull, unremarkable, lackluster, unappealing, acne, scars, tired eyes, dull complexion
+  neutral: hispanic race man
+  guidance_scale: 1
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+
+- target: hispanic race woman
+  positive: person, beautiful face, attractive, stunning, flawless skin, symmetrical features, well-groomed, radiant, glowing, elegant, charming, aesthetically pleasing, clear complexion, bright eyes, perfect smile
+  unconditional: person, unattractive face, blemished skin, asymmetrical features, unkempt, dull, unremarkable, lackluster, unappealing, acne, scars, tired eyes, dull complexion
+  neutral: hispanic race woman
+  guidance_scale: 1
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+
+###
+- target: white race man
+  positive: person, beautiful face, attractive, stunning, flawless skin, symmetrical features, well-groomed, radiant, glowing, elegant, charming, aesthetically pleasing, clear complexion, bright eyes, perfect smile
+  unconditional: person, unattractive face, blemished skin, asymmetrical features, unkempt, dull, unremarkable, lackluster, unappealing, acne, scars, tired eyes, dull complexion
+  neutral: white race man
+  guidance_scale: 1
+  rank: 4
+  action: erase
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+
+- target: black race man
+  positive: person, beautiful face, attractive, stunning, flawless skin, symmetrical features, well-groomed, radiant, glowing, elegant, charming, aesthetically pleasing, clear complexion, bright eyes, perfect smile
+  unconditional: person, unattractive face, blemished skin, asymmetrical features, unkempt, dull, unremarkable, lackluster, unappealing, acne, scars, tired eyes, dull complexion
+  neutral: black race man
+  guidance_scale: 1
+  rank: 4
+  action: erase
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+
+- target: indian race man
+  positive: person, beautiful face, attractive, stunning, flawless skin, symmetrical features, well-groomed, radiant, glowing, elegant, charming, aesthetically pleasing, clear complexion, bright eyes, perfect smile
+  unconditional: person, unattractive face, blemished skin, asymmetrical features, unkempt, dull, unremarkable, lackluster, unappealing, acne, scars, tired eyes, dull complexion
+  neutral: indian race man
+  guidance_scale: 1
+  rank: 4
+  action: erase
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+
+- target: asian race man
+  positive: person, beautiful face, attractive, stunning, flawless skin, symmetrical features, well-groomed, radiant, glowing, elegant, charming, aesthetically pleasing, clear complexion, bright eyes, perfect smile
+  unconditional: person, unattractive face, blemished skin, asymmetrical features, unkempt, dull, unremarkable, lackluster, unappealing, acne, scars, tired eyes, dull complexion
+  neutral: asian race man
+  guidance_scale: 1
+  rank: 4
+  action: erase
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+
+- target: hispanic race man
+  positive: person, beautiful face, attractive, stunning, flawless skin, symmetrical features, well-groomed, radiant, glowing, elegant, charming, aesthetically pleasing, clear complexion, bright eyes, perfect smile
+  unconditional: person, unattractive face, blemished skin, asymmetrical features, unkempt, dull, unremarkable, lackluster, unappealing, acne, scars, tired eyes, dull complexion
+  neutral: hispanic race man
+  guidance_scale: 1
+  rank: 4
+  action: erase
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+
+- target: white race woman
+  positive: person, beautiful face, attractive, stunning, flawless skin, symmetrical features, well-groomed, radiant, glowing, elegant, charming, aesthetically pleasing, clear complexion, bright eyes, perfect smile
+  unconditional: person, unattractive face, blemished skin, asymmetrical features, unkempt, dull, unremarkable, lackluster, unappealing, acne, scars, tired eyes, dull complexion
+  neutral: white race woman
+  guidance_scale: 1
+  rank: 4
+  action: erase
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+
+- target: black race woman
+  positive: person, beautiful face, attractive, stunning, flawless skin, symmetrical features, well-groomed, radiant, glowing, elegant, charming, aesthetically pleasing, clear complexion, bright eyes, perfect smile
+  unconditional: person, unattractive face, blemished skin, asymmetrical features, unkempt, dull, unremarkable, lackluster, unappealing, acne, scars, tired eyes, dull complexion
+  neutral: black race woman
+  guidance_scale: 1
+  rank: 4
+  action: erase
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+
+- target: indian race woman
+  positive: person, beautiful face, attractive, stunning, flawless skin, symmetrical features, well-groomed, radiant, glowing, elegant, charming, aesthetically pleasing, clear complexion, bright eyes, perfect smile
+  unconditional: person, unattractive face, blemished skin, asymmetrical features, unkempt, dull, unremarkable, lackluster, unappealing, acne, scars, tired eyes, dull complexion
+  neutral: indian race woman
+  guidance_scale: 1
+  rank: 4
+  action: erase
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+
+- target: asian race woman
+  positive: person, beautiful face, attractive, stunning, flawless skin, symmetrical features, well-groomed, radiant, glowing, elegant, charming, aesthetically pleasing, clear complexion, bright eyes, perfect smile
+  unconditional: person, unattractive face, blemished skin, asymmetrical features, unkempt, dull, unremarkable, lackluster, unappealing, acne, scars, tired eyes, dull complexion
+  neutral: asian race woman
+  guidance_scale: 1
+  rank: 4
+  action: erase
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+
+- target: hispanic race woman
+  positive: person, beautiful face, attractive, stunning, flawless skin, symmetrical features, well-groomed, radiant, glowing, elegant, charming, aesthetically pleasing, clear complexion, bright eyes, perfect smile
+  unconditional: person, unattractive face, blemished skin, asymmetrical features, unkempt, dull, unremarkable, lackluster, unappealing, acne, scars, tired eyes, dull complexion
+  neutral: hispanic race woman
+  guidance_scale: 1
+  rank: 4
+  action: erase
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1

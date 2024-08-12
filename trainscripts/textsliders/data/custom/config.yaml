@@ -1,17 +1,18 @@
 prompts_file: "trainscripts/imagesliders/data/prompts.yaml"
 pretrained_model:
   name_or_path: "base_models/veronika" # you can also use .ckpt or .safetensors models
+  # name_or_path: "stablediffusionapi/realistic-vision-v51"
   v2: false # true if model is v2.x
   v_pred: false # true if model uses v-prediction
 network:
   type: "c3lier" # or "c3lier" or "lierla"
   rank: 4
   alpha: 1.0
-  training_method: "full"
+  training_method: "noxattn"
 train:
   precision: "bfloat16"
   noise_scheduler: "ddim" # or "ddpm", "lms", "euler_a"
-  iterations: 1000
+  iterations: 2000
   lr: 0.0002
   optimizer: "AdamW"
   lr_scheduler: "constant"
@@ -19,7 +20,7 @@ train:
 save:
   name: "temp"
   path: "./models"
-  per_steps: 500
+  per_steps: 1000
   precision: "bfloat16"
 logging:
   use_wandb: true

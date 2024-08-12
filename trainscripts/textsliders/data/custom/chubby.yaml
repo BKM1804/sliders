@@ -1,0 +1,219 @@
+- target: white race man
+  positive: white race man, fat, chubby, overweight, obese
+  unconditional: white race man, lean, fit, slim, slender
+  neutral: white race man
+  guidance_scale: 1
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+
+- target: white race woman
+  positive: white race woman, fat, chubby, overweight, obese
+  unconditional: white race woman, lean, fit, slim, slender
+  neutral: white race woman
+  guidance_scale: 1
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+
+- target: black race man
+  positive: black race man, fat, chubby, overweight, obese
+  unconditional: black race man, lean, fit, slim, slender
+  neutral: black race man
+  guidance_scale: 1
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+
+- target: black race woman
+  positive: black race woman, fat, chubby, overweight, obese
+  unconditional: black race woman, lean, fit, slim, slender
+  neutral: black race woman
+  guidance_scale: 1
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+
+- target: indian race man
+  positive: indian race man, fat, chubby, overweight, obese
+  unconditional: indian race man, lean, fit, slim, slender
+  neutral: indian race man
+  guidance_scale: 1
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+
+- target: indian race woman
+  positive: indian race woman, fat, chubby, overweight, obese
+  unconditional: indian race woman, lean, fit, slim, slender
+  neutral: indian race woman
+  guidance_scale: 1
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+
+- target: asian race man
+  positive: asian race man, fat, chubby, overweight, obese
+  unconditional: asian race man, lean, fit, slim, slender
+  neutral: asian race man
+  guidance_scale: 1
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+
+- target: asian race woman
+  positive: asian race woman, fat, chubby, overweight, obese
+  unconditional: asian race woman, lean, fit, slim, slender
+  neutral: asian race woman
+  guidance_scale: 1
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+
+- target: hispanic race man
+  positive: hispanic race man, fat, chubby, overweight, obese
+  unconditional: hispanic race man, lean, fit, slim, slender
+  neutral: hispanic race man
+  guidance_scale: 1
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+
+- target: hispanic race woman
+  positive: hispanic race woman, fat, chubby, overweight, obese
+  unconditional: hispanic race woman, lean, fit, slim, slender
+  neutral: hispanic race woman
+  guidance_scale: 1
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+
+# - target: white race man
+#   positive: white race man, lean, fit, slim, slender
+#   unconditional: white race man, fat, chubby, overweight, obese
+#   neutral: white race man
+#   guidance_scale: 1
+#   rank: 4
+#   action: erase
+#   resolution: 512
+#   dynamic_resolution: false
+#   batch_size: 1
+
+# - target: white race woman
+#   positive: white race woman, lean, fit, slim, slender
+#   unconditional: white race woman, fat, chubby, overweight, obese
+#   neutral: white race woman
+#   guidance_scale: 1
+#   rank: 4
+#   action: erase
+#   resolution: 512
+#   dynamic_resolution: false
+#   batch_size: 1
+
+# - target: black race man
+#   positive: black race man, lean, fit, slim, slender
+#   unconditional: black race man, fat, chubby, overweight, obese
+#   neutral: black race man
+#   guidance_scale: 1
+#   rank: 4
+#   action: erase
+#   resolution: 512
+#   dynamic_resolution: false
+#   batch_size: 1
+
+# - target: black race woman
+#   positive: black race woman, lean, fit, slim, slender
+#   unconditional: black race woman, fat, chubby, overweight, obese
+#   neutral: black race woman
+#   guidance_scale: 1
+#   rank: 4
+#   action: erase
+#   resolution: 512
+#   dynamic_resolution: false
+#   batch_size: 1
+
+# - target: indian race man
+#   positive: indian race man, lean, fit, slim, slender
+#   unconditional: indian race man, fat, chubby, overweight, obese
+#   neutral: indian race man
+#   guidance_scale: 1
+#   rank: 4
+#   action: erase
+#   resolution: 512
+#   dynamic_resolution: false
+#   batch_size: 1
+
+# - target: indian race woman
+#   positive: indian race woman, lean, fit, slim, slender
+#   unconditional: indian race woman, fat, chubby, overweight, obese
+#   neutral: indian race woman
+#   guidance_scale: 1
+#   rank: 4
+#   action: erase
+#   resolution: 512
+#   dynamic_resolution: false
+#   batch_size: 1
+
+# - target: asian race man
+#   positive: asian race man, lean, fit, slim, slender
+#   unconditional: asian race man, fat, chubby, overweight, obese
+#   neutral: asian race man
+#   guidance_scale: 1
+#   rank: 4
+#   action: erase
+#   resolution: 512
+#   dynamic_resolution: false
+#   batch_size: 1
+
+# - target: asian race woman
+#   positive: asian race woman, lean, fit, slim, slender
+#   unconditional: asian race woman, fat, chubby, overweight, obese
+#   neutral: asian race woman
+#   guidance_scale: 1
+#   rank: 4
+#   action: erase
+#   resolution: 512
+#   dynamic_resolution: false
+#   batch_size: 1
+
+# - target: hispanic race man
+#   positive: hispanic race man, lean, fit, slim, slender
+#   unconditional: hispanic race man, fat, chubby, overweight, obese
+#   neutral: hispanic race man
+#   guidance_scale: 1
+#   rank: 4
+#   action: erase
+#   resolution: 512
+#   dynamic_resolution: false
+#   batch_size: 1
+
+# - target: hispanic race woman
+#   positive: hispanic race woman, lean, fit, slim, slender
+#   unconditional: hispanic race woman, fat, chubby, overweight, obese
+#   neutral: hispanic race woman
+#   guidance_scale: 1
+#   rank: 4
+#   action: erase
+#   resolution: 512
+#   dynamic_resolution: false
+#   batch_size: 1
