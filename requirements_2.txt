@@ -1,6 +1,6 @@
 bitsandbytes==0.41.3
 dadaptation==3.2
-diffusers==0.30.0
+diffusers==0.26.0
 ipython==8.15.0
 lion_pytorch==0.2.2
 lpips==0.1.4
@@ -15,11 +15,11 @@ pydantic==2.8.2
 PyYAML==6.0.2
 Requests==2.32.3
 safetensors==0.4.4
-torch==2.3.1
-torchvision==0.18.1 
-torchaudio==2.3.1
+torch==2.1.1
+torchvision==0.16.1
+torchaudio==2.1.1
 tqdm==4.66.5
-transformers==4.36.0
+transformers==4.26.0
 wandb==0.17.0
-xformers
-accelerate==0.22.0
+xformers==0.0.23
+accelerate==0.16.0

@@ -5,10 +5,10 @@ pretrained_model:
   v2: false # true if model is v2.x
   v_pred: false # true if model uses v-prediction
 network:
-  type: "c3lier" # or "c3lier" or "lierla"
+  type: "lierla" # or "c3lier" or "lierla"
   rank: 8
   alpha: 1.0
-  training_method: "full" # or "noxattn" or "full"
+  training_method: "noxattn" # or "noxattn" or "full"
 train:
   precision: "bfloat16"
   noise_scheduler: "ddim" # or "ddpm", "lms", "euler_a"

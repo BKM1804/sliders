@@ -157,8 +157,8 @@ def predict_noise(
 
     # predict the noise residual
     noise_pred = unet(
-        latent_model_input,
-        timestep,
+        sample = latent_model_input,
+        timestep = timestep,
         encoder_hidden_states=text_embeddings,
     ).sample
 

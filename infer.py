@@ -12,6 +12,7 @@ from diffusers import (
     AutoencoderKL,
     LMSDiscreteScheduler,
     UNet2DConditionModel,
+    StableDiffusionPipeline
 )
 from trainscripts.textsliders.lora import (
     LoRANetwork,
@@ -36,18 +37,23 @@ def load_models(pretrained_model_name_or_path, revision, device, weight_dtype):
         beta_schedule="scaled_linear",
         num_train_timesteps=1000,
     )
-    tokenizer = CLIPTokenizer.from_pretrained(
-        pretrained_model_name_or_path, subfolder="tokenizer", revision=revision
-    )
-    text_encoder = CLIPTextModel.from_pretrained(
-        pretrained_model_name_or_path, subfolder="text_encoder", revision=revision
-    )
-    vae = AutoencoderKL.from_pretrained(
-        pretrained_model_name_or_path, subfolder="vae", revision=revision
-    )
-    unet = UNet2DConditionModel.from_pretrained(
-        pretrained_model_name_or_path, subfolder="unet", revision=revision
-    )
+    # tokenizer = CLIPTokenizer.from_pretrained(
+    #     pretrained_model_name_or_path, subfolder="tokenizer", revision=revision
+    # )
+    # text_encoder = CLIPTextModel.from_pretrained(
+    #     pretrained_model_name_or_path, subfolder="text_encoder", revision=revision
+    # )
+    # vae = AutoencoderKL.from_pretrained(
+    #     pretrained_model_name_or_path, subfolder="vae", revision=revision
+    # )
+    # unet = UNet2DConditionModel.from_pretrained(
+    #     pretrained_model_name_or_path, subfolder="unet", revision=revision
+    # )
+    pipe = StableDiffusionPipeline.from_single_file(pretrained_model_name_or_path , torch_dtype = weight_dtype)
+    unet = pipe.unet
+    vae = pipe.vae
+    text_encoder = pipe.text_encoder
+    tokenizer = pipe.tokenizer
     # Freeze parameters of models to save more memory
     unet.requires_grad_(False)
     unet.to(device, dtype=weight_dtype)
@@ -60,7 +66,7 @@ def load_models(pretrained_model_name_or_path, revision, device, weight_dtype):
 
 
 def generate_images(args, prompts, lora_weight, noise_scheduler, tokenizer, text_encoder, vae, unet, device, weight_dtype):
-    scales = [-1, 0, 1, 2, 3, 4]
+    scales = [-2,-1, 0, 1, 2, 3, 4]
     start_noise = 700
     num_images_per_prompt = 1
 
@@ -88,7 +94,7 @@ def generate_images(args, prompts, lora_weight, noise_scheduler, tokenizer, text
             network_type = "c3lier"
             if train_method == "xattn":
                 network_type = "lierla"
-
+            network_type = "lierla"
             modules = DEFAULT_TARGET_REPLACE
             if network_type == "c3lier":
                 modules += UNET_TARGET_REPLACE_MODULE_CONV
@@ -97,11 +103,14 @@ def generate_images(args, prompts, lora_weight, noise_scheduler, tokenizer, text
             name = os.path.basename(model_name)
             os.makedirs(f"{args.out_dir}/{name}", exist_ok=True)
 
-            unet = UNet2DConditionModel.from_pretrained(
-                args.model_path, subfolder="unet", revision=args.revision
-            )
+            # unet = UNet2DConditionModel.from_pretrained(
+            #     args.model_path, subfolder="unet", revision=args.revision
+            # )
+            pipe = StableDiffusionPipeline.from_single_file(args.model_path , torch_dtype = weight_dtype)
+            unet = pipe.unet
             unet.requires_grad_(False)
             unet.to(device, dtype=weight_dtype)
+            del pipe
 
             rank = 4
             alpha = 1
