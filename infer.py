@@ -94,7 +94,6 @@ def generate_images(args, prompts, lora_weight, noise_scheduler, tokenizer, text
             network_type = "c3lier"
             if train_method == "xattn":
                 network_type = "lierla"
-            network_type = "lierla"
             modules = DEFAULT_TARGET_REPLACE
             if network_type == "c3lier":
                 modules += UNET_TARGET_REPLACE_MODULE_CONV

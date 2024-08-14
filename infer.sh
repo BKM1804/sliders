@@ -1,2 +1,2 @@
-python3 infer.py --lora_weight '/workspace/sliders/models/veronika_dreambooth_prompt_weight_alpha1.0_rank4_full/veronika_dreambooth_prompt_weight_alpha1.0_rank4_full_200steps.safetensors' \
---model_path '/workspace/veronika/veronika.safetensors'
+python3 infer.py --lora_weight '/workspace/sliders/models/veronika_dreambooth_prompt_breast_new_env_alpha1.0_rank4_full/veronika_dreambooth_prompt_breast_new_env_alpha1.0_rank4_full_300steps.safetensors' \
+--model_path '/workspace/sliders/veronika.safetensors'
