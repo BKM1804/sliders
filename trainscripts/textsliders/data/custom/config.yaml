@@ -1,22 +1,21 @@
-prompts_file: "trainscripts/imagesliders/data/prompts.yaml"
+prompts_file: "trainscripts/textsliders/data/Veronika.yaml"
 pretrained_model:
-  name_or_path: "/workspace/veronika/veronika.safetensors" # you can also use .ckpt or .safetensors models
-  # name_or_path: "stablediffusionapi/realistic-vision-v51"
+  name_or_path: "/workspace/sliders/veronika.safetensors" # you can also use .ckpt or .safetensors models
   v2: false # true if model is v2.x
   v_pred: false # true if model uses v-prediction
 network:
   type: "c3lier" # or "c3lier" or "lierla"
-  rank: 8
+  rank: 4
   alpha: 1.0
-  training_method: "full" # or "noxattn" or "full"
+  training_method: "noxattn"
 train:
   precision: "bfloat16"
   noise_scheduler: "ddim" # or "ddpm", "lms", "euler_a"
-  iterations: 1500
+  iterations: 400
   lr: 0.0002
   optimizer: "AdamW"
   lr_scheduler: "constant"
-  max_denoising_steps: 50
+  max_denoising_steps: 35
 save:
   name: "temp"
   path: "./models"

@@ -179,21 +179,13 @@ def train(
                     prompt_pair.resolution
                 )
 
-            if config.logging.verbose:
-                print("guidance_scale:", prompt_pair.guidance_scale)
-                print("resolution:", prompt_pair.resolution)
-                print("dynamic_resolution:", prompt_pair.dynamic_resolution)
-                if prompt_pair.dynamic_resolution:
-                    print("bucketed resolution:", (height, width))
-                print("batch_size:", prompt_pair.batch_size)
-                
-            
+                      
             latents = train_util.get_initial_latents(
                 noise_scheduler, prompt_pair.batch_size, height, width, 1
             ).to(device, dtype=weight_dtype)
 
             with network:
-                # ちょっとデノイズされれたものが返る
+
                 denoised_latents = train_util.diffusion(
                     unet,
                     noise_scheduler,
@@ -253,12 +245,6 @@ def train(
                 guidance_scale=prompt_pair.guidance_scale
             ).to(device, dtype=weight_dtype)
             
-            
-            #########################
-            if config.logging.verbose:
-                print("positive_latents:", positive_latents[0, 0, :5, :5])
-                print("neutral_latents:", neutral_latents[0, 0, :5, :5])
-                print("unconditional_latents:", unconditional_latents[0, 0, :5, :5])
 
         with network:
             target_latents = train_util.predict_noise(
@@ -276,9 +262,6 @@ def train(
             
             #########################
 
-            if config.logging.verbose:
-                print("target_latents:", target_latents[0, 0, :5, :5])
-
         positive_latents.requires_grad = False
         neutral_latents.requires_grad = False
         unconditional_latents.requires_grad = False
@@ -292,10 +275,6 @@ def train(
              
         # 1000倍しないとずっと0.000...になってしまって見た目的に面白くない
         pbar.set_description(f"Loss*1k: {loss.item()*1000:.4f}")
-        if config.logging.use_wandb:
-            wandb.log(
-                {"loss": loss, "iteration": i, "lr": lr_scheduler.get_last_lr()[0]}
-            )
 
         loss.backward()
         optimizer.step()
@@ -342,89 +321,53 @@ def train(
     print("Done.")
 
 
-def main(args):
-    config_file = args.config_file
-
+def main(config_file: str, prompts_file: str = None, alpha: float = None, 
+         rank: int = None, device: int = 0, name: str = None, attributes: str = None):
     config = config_util.load_config_from_yaml(config_file)
-    if args.name is not None:
-        config.save.name = args.name
-    attributes = []
-    if args.attributes is not None:
-        attributes = args.attributes.split(',')
-        attributes = [a.strip() for a in attributes]
+    
+    if name is not None:
+        config.save.name = name
+    
+    attribute_list = []
+    if attributes is not None:
+        attribute_list = [a.strip() for a in attributes.split(',')]
 
-    if args.prompts_file is not None:
-        config.prompts_file = args.prompts_file
-    if args.alpha is not None:
-        config.network.alpha = args.alpha
-    if args.rank is not None:
-        config.network.rank = args.rank
+    if prompts_file is not None:
+        config.prompts_file = prompts_file
+    if alpha is not None:
+        config.network.alpha = alpha
+    if rank is not None:
+        config.network.rank = rank
+    
     config.save.name += f'_alpha{config.network.alpha}'
     config.save.name += f'_rank{config.network.rank}'
     config.save.name += f'_{config.network.training_method}'
     config.save.path += f'/{config.save.name}'
     
-    prompts = prompt_util.load_prompts_from_yaml(config.prompts_file, attributes)
-    device = torch.device(f"cuda:{args.device}")
-    train(config, prompts, device)
+    prompts = prompt_util.load_prompts_from_yaml(config.prompts_file, attribute_list)
+    device = torch.device(f"cuda:{device}")
     
+    train(config, prompts, device)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument(
-        "--config_file",
-        required=True,
-        help="Config file for training.",
-    )
-    parser.add_argument(
-        "--prompts_file",
-        required=False,
-        help="Prompts file for training.",
-        default=None
-    )
-    # config_file 'data/config.yaml'
-    parser.add_argument(
-        "--alpha",
-        type=float,
-        required=False,
-        default=None,
-        help="LoRA weight.",
-    )
-    # --alpha 1.0
-    parser.add_argument(
-        "--rank",
-        type=int,
-        required=False,
-        help="Rank of LoRA.",
-        default=None,
-    )
-    # --rank 4
-    parser.add_argument(
-        "--device",
-        type=int,
-        required=False,
-        default=0,
-        help="Device to train on.",
-    )
-    # --device 0
-    parser.add_argument(
-        "--name",
-        type=str,
-        required=False,
-        default=None,
-        help="Device to train on.",
-    )
-    # --name 'eyesize_slider'
-    parser.add_argument(
-        "--attributes",
-        type=str,
-        required=False,
-        default=None,
-        help="attritbutes to disentangle (comma seperated string)",
-    )
-    
-    # --attributes 'male, female'
+    parser.add_argument("--config_file", required=True, help="Config file for training.")
+    parser.add_argument("--prompts_file", required=False, help="Prompts file for training.", default=None)
+    parser.add_argument("--alpha", type=float, required=False, default=None, help="LoRA weight.")
+    parser.add_argument("--rank", type=int, required=False, help="Rank of LoRA.", default=None)
+    parser.add_argument("--device", type=int, required=False, default=0, help="Device to train on.")
+    parser.add_argument("--name", type=str, required=False, default=None, help="Name for the training run.")
+    parser.add_argument("--attributes", type=str, required=False, default=None, 
+                        help="Attributes to disentangle (comma separated string)")
     
     args = parser.parse_args()
 
-    main(args)
+    main(
+        config_file=args.config_file,
+        prompts_file=args.prompts_file,
+        alpha=args.alpha,
+        rank=args.rank,
+        device=args.device,
+        name=args.name,
+        attributes=args.attributes
+    )

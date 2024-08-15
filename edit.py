@@ -383,19 +383,27 @@ def generate_images(
         images_list.append(pil_images[0])
 
     concatenated_image = concatenate_images(images_list)
-    concatenated_image.save(output_path)
+    # concatenated_image.save(output_path)
+    return concatenated_image
 
 # Example usage:
-generate_images(
-    image_path="/workspace/sliders/input/input_2.png",
-    prompt="a professional photo of a woman, wearing a bikini, full body",
-    lora_weight="/workspace/sliders/models/veronika_dreambooth_prompt_weight_new_env_alpha1.0_rank8_full/veronika_dreambooth_prompt_weight_new_env_alpha1.0_rank8_full_200steps.safetensors",
-    output_path="output_start_500_5.png",
-    pretrained_model_name_or_path = '/workspace/veronika/veronika.safetensors',
-    start_noise = 500 ,
-    num_inner_steps = 10 , 
-    ddim_steps = 50 , 
-    scales=[-0.5, 0, 1, 2, 3],
-    early_stop_epsilon=1e-5,
-    
-)
+images = ['/workspace/sliders/input/1.png', '/workspace/sliders/input/2.png','/workspace/sliders/input/3.png','/workspace/sliders/input/4.png','/workspace/sliders/input/5.png','/workspace/sliders/input/1.png']
+prompts = ['A full-body image of an ohwx woman standing with a plain white background.',
+'A back view of an ohwx woman with a simple background , full body.',
+'An ohwx woman sitting on a chair with a minimal background.',
+'A full-body image of an ohwx woman wearing a crop top and a short skirt, standing with a plain white background.',
+'An ohwx woman in a bikini, posing casually against a simple, solid color background.']
+for idx , prompt in enumerate(prompts) :
+    concatenated_image = generate_images(
+        image_path=images[idx],
+        prompt=prompts[idx],
+        lora_weight="/workspace/sliders/models/breast_test_148_v2_alpha1.0_rank4_noxattn/breast_test_148_v2_alpha1.0_rank4_noxattn_last.safetensors",
+        output_path="output_start_500_11.png",
+        pretrained_model_name_or_path = '/workspace/sliders/veronika.safetensors',
+        start_noise = 500 ,
+        num_inner_steps = 2 , 
+        ddim_steps = 35 , 
+        scales=[-2,-1, 0, 1, 2, 3, 4],
+        early_stop_epsilon=1e-5,  
+    )
+    concatenated_image.save(f'output_i2i/{idx}.png')

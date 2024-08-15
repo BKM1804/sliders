@@ -1,20 +1,10 @@
 - target: ohwx woman
-  positive: ohwx woman, fat, chubby, overweight, obese
-  unconditional: ohwx woman, lean, fit, slim, slender
-  neutral: ohwx woman
+  positive: ohwx woman, very fat, chubby, overweight, obese, symmetrical face.
+  unconditional: ohwx woman, very slim, fit, lean, slender, angular, symmetrical face.
+  neutral: ohwx woman, well-proportioned body.
   guidance_scale: 1
-  rank: 8
+  rank: 4
   action: enhance
   resolution: 512
   dynamic_resolution: false
-  batch_size: 1
-# - target: ohwx woman
-#   positive: ohwx woman, lean, fit, slim, slender
-#   unconditional: ohwx woman, fat, chubby, overweight, obese
-#   neutral: ohwx woman
-#   guidance_scale: 1
-#   rank: 4
-#   action: erase
-#   resolution: 512
-#   dynamic_resolution: false
-#   batch_size: 1
+  batch_size: 2
